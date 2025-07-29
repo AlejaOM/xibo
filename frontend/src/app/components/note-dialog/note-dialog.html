@@ -1,0 +1,21 @@
+
+<h1 mat-dialog-title>{{ isEditMode ? 'Editar Nota' : 'Nueva Nota' }}</h1>
+
+<div mat-dialog-content>
+  <form [formGroup]="noteForm" class="note-form">
+    <mat-form-field appearance="outline">
+      <mat-label>Título</mat-label>
+      <input matInput formControlName="title" required>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Contenido</mat-label>
+      <textarea matInput formControlName="content" rows="8"></textarea>
+    </mat-form-field>
+  </form>
+</div>
+
+<div mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancelar</button>
+  <button mat-raised-button color="primary" (click)="onSave()" [disabled]="noteForm.invalid">Guardar</button>
+</div>

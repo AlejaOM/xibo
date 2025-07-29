@@ -1,0 +1,47 @@
+/* src/app/components/register/register.css */
+
+.register-title {
+  text-align: center;
+  color: #e91e63; /* Un tono de rosa de Material Design */
+  font-weight: 300;
+  padding-top: 16px;
+}
+
+.password-criteria {
+  margin: -10px 0 20px 0; /* Espaciado para que se vea bien */
+  font-size: 0.85em;
+}
+
+.password-criteria ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.password-criteria li {
+  color: #757575; /* Color gris por defecto */
+  transition: color 0.3s;
+  padding: 2px 0;
+}
+
+/* Estilo para cuando el criterio es válido */
+.password-criteria li.valid {
+  color: #4caf50; /* Color verde */
+}
+
+/* Añade un checkmark antes del texto del criterio válido */
+.password-criteria li.valid::before {
+  content: '✓ ';
+  font-weight: bold;
+  margin-right: 4px;
+}
+
+/* Asegura que los botones y otros elementos ocupen todo el ancho */
+.full-width {
+  width: 100%;
+}
+
+/* Espaciado para el botón */
+button.full-width {
+    margin-top: 10px;
+}

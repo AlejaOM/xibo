@@ -1,0 +1,45 @@
+/* src/app/components/notes-dashboard/notes-dashboard.css */
+.spacer {
+  flex: 1 1 auto;
+}
+
+.dashboard-container {
+  padding: 24px;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.note-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.note-card mat-card-content {
+  flex-grow: 1;
+  white-space: pre-wrap; /* Respeta saltos de línea y espacios */
+}
+
+.no-notes-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #757575;
+  height: 60vh;
+}
+
+.no-notes-message mat-icon {
+  font-size: 64px;
+  width: 64px;
+  height: 64px;
+}
+
+.fab-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+}

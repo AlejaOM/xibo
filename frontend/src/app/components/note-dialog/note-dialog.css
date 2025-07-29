@@ -1,0 +1,5 @@
+/* src/app/components/note-dialog/note-dialog.css */
+.note-form {
+  display: flex;
+  flex-direction: column;
+}

@@ -1,0 +1,41 @@
+<!-- src/app/components/notes-dashboard/notes-dashboard.html -->
+<mat-toolbar color="primary">
+  <span>Mis Notas</span>
+  <span class="spacer"></span>
+  <button mat-icon-button (click)="logout()" aria-label="Cerrar sesión">
+    <mat-icon>logout</mat-icon>
+  </button>
+</mat-toolbar>
+
+<div class="dashboard-container">
+  <!-- Mensaje si no hay notas -->
+  <div *ngIf="notes.length === 0" class="no-notes-message">
+    <mat-icon>description</mat-icon>
+    <p>Aún no tienes notas. ¡Crea la primera!</p>
+  </div>
+
+  <!-- Cuadrícula de notas -->
+  <div class="notes-grid">
+    <mat-card *ngFor="let note of notes" class="note-card">
+      <mat-card-header>
+        <mat-card-title>{{ note.title }}</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <p>{{ note.content }}</p>
+      </mat-card-content>
+      <mat-card-actions align="end">
+        <button mat-icon-button (click)="openNoteDialog(note)" aria-label="Editar nota">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button color="warn" (click)="deleteNote(note.id)" aria-label="Eliminar nota">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+
+  <!-- Botón flotante para añadir notas -->
+  <button mat-fab color="accent" class="fab-button" (click)="openNoteDialog()" aria-label="Crear nueva nota">
+    <mat-icon>add</mat-icon>
+  </button>
+</div>
